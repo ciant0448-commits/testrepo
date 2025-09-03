@@ -1,0 +1,12 @@
+{
+  "name": "playwright-scraper",
+  "version": "1.0.0",
+  "description": "A general Playwright automation script template",
+  "main": "fetch_data.js",
+  "scripts": {
+    "start": "node fetch_data.js"
+  },
+  "dependencies": {
+    "playwright": "^1.39.0"
+  }
+}
