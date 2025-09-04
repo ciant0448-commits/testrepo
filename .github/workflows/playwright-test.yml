@@ -1,0 +1,28 @@
+name: Run Playwright Script
+
+on:
+  push:           # Runs whenever you push code
+  schedule:       # Runs on a schedule (optional)
+    - cron: '0 * * * *' # Every hour (you can change this)
+
+jobs:
+  run-playwright:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Playwright script
+        run: node fetch_deadlines.js
+        env:
+          LMS_USER: ${{ secrets.USERNAME }}
+          LMS_PASS: ${{ secrets.PASSWORD }}
