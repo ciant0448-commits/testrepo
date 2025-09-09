@@ -1,16 +1,7 @@
-- name: Install Playwright browsers
-  run: npx playwright install --with-deps
-
 name: Run Playwright Script
 
 on:
-<<<<<<< HEAD
-  push:           # Runs whenever you push code
-  schedule:       # Runs on a schedule (optional)
-    - cron: '0 * * * *' # Every hour (you can change this)
-=======
-  workflow_dispatch:   # Manual run (safe for testing)
->>>>>>> b97dff4 (Add GitHub Actions workflow)
+  workflow_dispatch:
 
 jobs:
   run-playwright:
@@ -28,12 +19,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-<<<<<<< HEAD
-=======
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
 
->>>>>>> b97dff4 (Add GitHub Actions workflow)
       - name: Run Playwright script
         run: node fetch_deadlines.js
         env:
